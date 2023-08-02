@@ -1,4 +1,4 @@
-import 'package:app_coffe_purchase/src/pages/home_page.dart';
+import 'package:app_coffe_purchase/src/pages/initial_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor:  Colors.orange,
       ),
-      home: const HomePage(),
+      home: const InitialPage(),
     );
   }
 }
