@@ -35,7 +35,7 @@ class CofeeTile extends StatelessWidget {
             //coffe name
             Text(
               nameItem,
-              style: const TextStyle(fontSize: 22),
+              style: const TextStyle(fontSize: 20),
             ),
             Text(descricao, style: TextStyle(color: Colors.grey[600])),
             //purchase
