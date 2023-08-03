@@ -1,4 +1,4 @@
-import 'package:app_coffe_purchase/src/pages/home_page.dart';
+import 'package:app_coffe_purchase/src/pages/base.dart';
 import 'package:flutter/material.dart';
 
 class InitialPage extends StatefulWidget {
@@ -40,9 +40,8 @@ class _InitialPageState extends State<InitialPage> {
             const SizedBox(height: 10),
             GestureDetector(
               onTap: () {
-
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => const HomePage()));
+                    MaterialPageRoute(builder: (_) => const BaseScreen()));
               },
               child: Container(
                 padding: const EdgeInsets.all(20),

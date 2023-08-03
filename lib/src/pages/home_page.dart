@@ -3,8 +3,8 @@ import 'package:app_coffe_purchase/src/texts/lib_texts.dart';
 import 'package:app_coffe_purchase/src/utils/coffe_name.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../utils/coffee_tile.dart';
+import '../widgets/widgets_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,9 +16,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List coffeType = [
     ['Cappucino', true],
-    ['Black', false],
-    ['Latte', false],
-    ['Tea', false],
+    ['Black Coffe', false],
+    ['Coffee', false],
+    ['Sorvete', false],
   ];
   // functions
 
@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MyDrawer(),
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
         elevation: 0,
@@ -41,16 +42,9 @@ class _HomePageState extends State<HomePage> {
         leading: const Icon(Icons.menu),
         actions: const [
           Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: Icon(Icons.person),
-          )
+              padding: EdgeInsets.only(right: 20.0), child: Icon(Icons.person)),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-      ]),
       body: Column(
         children: [
           //find the best coffee for you
@@ -65,7 +59,7 @@ class _HomePageState extends State<HomePage> {
           ),
           // search bar
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -97,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                   })),
           // horizontal listview
           const SizedBox(
-            height: 25,
+            height: 15,
           ),
           Expanded(
             child: ListView(
@@ -111,15 +105,21 @@ class _HomePageState extends State<HomePage> {
                 ),
                 CofeeTile(
                   valor: 2.78,
+                  nameItem: 'Sorvete coffee',
+                  descricao: DescritionItems.descSorvete,
+                  image: CoffeNames.sorvete,
+                ),
+                CofeeTile(
+                  valor: 2.78,
                   nameItem: 'Café Preto',
                   descricao: DescritionItems.descCafe,
                   image: CoffeNames.cafe,
                 ),
                 CofeeTile(
                   valor: 2.78,
-                  nameItem: 'Café Preto',
-                  descricao: DescritionItems.descSorvete,
-                  image: CoffeNames.sorvete,
+                  nameItem: 'Café',
+                  descricao: DescritionItems.descCafe,
+                  image: CoffeNames.coffee,
                 ),
               ],
             ),

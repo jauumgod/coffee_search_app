@@ -1,5 +1,4 @@
-import 'package:app_coffe_purchase/src/pages/favorite.dart';
-// import 'package:app_coffe_purchase/src/pages/initial_page.dart';
+import 'package:app_coffe_purchase/src/pages/initial_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +17,7 @@ class MainApp extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor: Colors.orange,
       ),
-      home: FavoritePage(),
+      home: const InitialPage(),
     );
   }
 }
